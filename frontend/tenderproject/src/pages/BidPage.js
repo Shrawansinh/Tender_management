@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import "toastify/dist/toastify.css";
+import "react-toastify/dist/ReactToastify.css";
 import api from "../services/Api";
 const BidPage = () => {
   const { id } = useParams();
