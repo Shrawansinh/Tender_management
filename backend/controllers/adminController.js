@@ -1,41 +1,4 @@
-// const Admin = require("../models/Admin");
-// const bcrypt = require("bcrypt");
-// const jwt = require("jsonwebtoken");
 
-// const loginAdmin = async(req,res)=>{
-//     try{
-//         const {email,password}=req.body; // user inpput from frontend
-//         // check admin exist or not
-//         const adminExist = await Admin.find();
-//         console.log(req.body);
-//         console.log(email);
-//         console.log(adminExist);
-     
-//         if(!adminExist){
-//             return res.status(400).json({message:"Admin not found"});
-//         }
-//         const isPassword = await bcrypt.compare(password, adminExist.password);
-//            console.log(adminExist.email);
-//         if(!isPassword){
-//             return res.status(400).json({message:"Invalid password"});
-//         }
-//         console.log(password);
-
-// console.log(adminExist.password);
-//         // now comparison is done and now we will genreate a token for admin that will be used for authentication 
-//         const token = jwt.sign({
-//             id:adminExist._id,
-//             email:adminExist.email
-//         },process.env.JWT_SECRET,{
-//             expiresIn:"8d"
-//         });
-//         res.status(200).json({message:"Login Successfully",token,adminExist});
-
-//     }catch(err){
-//         res.status(500).json({message:err.message});
-//     }
-// }
-// module.exports={loginAdmin};
 const Admin = require("../models/Admin");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
