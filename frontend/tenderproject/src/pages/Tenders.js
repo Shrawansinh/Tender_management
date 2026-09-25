@@ -1,30 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import api from "../services/Api";
 
 const Tenders = () => {
   const [tenders, setTenders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    fetchTenders();
-  }, []);
+useEffect(() => {
+    const fetchTender = async () => {
+        try {
+            // tumhara existing fetchTender ka code
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
-  const fetchTenders = async () => {
-    try {
-      const res = await api.get("/tenders");
-      // Only show open tenders to public
-      const openTenders = res.data.filter(
-        (t) => t.status?.toLowerCase() === "open"
-      );
-      setTenders(openTenders);
-    } catch (error) {
-      console.log("Error fetching tenders:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+    fetchTender();
+}, [id]);
 
   const filteredTenders = tenders.filter(
     (t) =>

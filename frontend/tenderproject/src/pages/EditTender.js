@@ -16,13 +16,11 @@ const EditTender = () => {
     status: "Open",
   });
 
-  useEffect(() => {
-    fetchTender();
-  }, []);
-
+useEffect(() => {
   const fetchTender = async () => {
     try {
       const res = await api.get(`/tenders/single/${id}`);
+
       setFormData({
         ...res.data,
         startDate: res.data.startDate?.split("T")[0],
@@ -32,6 +30,9 @@ const EditTender = () => {
       console.log("Error fetching tender:", error);
     }
   };
+
+  fetchTender();
+}, [id]);
 
   const handleChange = (e) => {
     setFormData({

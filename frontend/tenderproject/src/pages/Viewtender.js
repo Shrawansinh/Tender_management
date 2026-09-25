@@ -12,23 +12,25 @@ const ViewTenders = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [tenderToDelete, setTenderToDelete] = useState(null);
 
-  useEffect(() => {
-    fetchTenders();
-  }, []);
-
+useEffect(() => {
   const fetchTenders = async () => {
     try {
       setLoading(true);
+
       const res = await api.get("/tenders");
       setTenders(res.data);
     } catch (error) {
       console.log("Error fetching tenders:", error);
+
       // Show error toast instead of alert
       showNotification("Error fetching tenders", "error");
     } finally {
       setLoading(false);
     }
   };
+
+  fetchTenders();
+}, []);
 
   const showNotification = (message, type = "success") => {
     // You can replace this with a proper toast notification library
