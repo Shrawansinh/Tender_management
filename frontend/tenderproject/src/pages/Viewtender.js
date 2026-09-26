@@ -16,7 +16,7 @@ const ViewTenders = () => {
     // You can replace this with a proper toast notification library
     alert(message);
   };
-  
+
 const fetchTenders = useCallback(async () => {
   try {
     setLoading(true);
@@ -30,6 +30,7 @@ const fetchTenders = useCallback(async () => {
     setLoading(false);
   }
 }, []);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 useEffect(() => {
   fetchTenders();
