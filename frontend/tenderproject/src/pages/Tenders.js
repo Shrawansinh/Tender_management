@@ -16,7 +16,7 @@ useEffect(() => {
     };
 
     fetchTender();
-}, [id]);
+}, []);
 
   const filteredTenders = tenders.filter(
     (t) =>
