@@ -12,6 +12,11 @@ const ViewTenders = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [tenderToDelete, setTenderToDelete] = useState(null);
 
+    const showNotification = (message, type = "success") => {
+    // You can replace this with a proper toast notification library
+    alert(message);
+  };
+  
 const fetchTenders = useCallback(async () => {
   try {
     setLoading(true);
@@ -30,10 +35,7 @@ useEffect(() => {
   fetchTenders();
 }, [fetchTenders]);
 
-  const showNotification = (message, type = "success") => {
-    // You can replace this with a proper toast notification library
-    alert(message);
-  };
+
 
   const handleDelete = async (id) => {
     setTenderToDelete(id);
