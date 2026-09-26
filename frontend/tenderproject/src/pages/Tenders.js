@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Tenders = () => {
-  const [tenders, setTenders] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [tenders] = useState([]);
+  const [loading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
 useEffect(() => {
