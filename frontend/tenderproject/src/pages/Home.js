@@ -7,9 +7,9 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [stats, setStats] = useState({
-    activeTenders: 128,
-    totalTenders: 342,
-    closedTenders: 214
+    activeTenders: 0,
+    totalTenders: 0,
+    closedTenders: 0
   });
 
   // Animated counter effect
